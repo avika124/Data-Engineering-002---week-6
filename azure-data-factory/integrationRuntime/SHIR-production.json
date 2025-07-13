@@ -1,0 +1,7 @@
+{
+	"name": "SHIR-production",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Self-hosted Integration Runtime for connecting on-premises data sources to Azure\nHybrid data gateway for local server to Azure SQL Database integration\nProduction SHIR for data migration and ETL processes"
+	}
+}

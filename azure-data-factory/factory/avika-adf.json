@@ -1,0 +1,9 @@
+{
+	"name": "avika-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8b1685c3-0ec7-4418-90b5-ab3f2805908b",
+		"tenantId": "6dbd461d-161f-448e-ab01-61a6cbf78126"
+	}
+}

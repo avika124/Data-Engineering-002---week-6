@@ -1,0 +1,39 @@
+{
+	"name": "LastSaturdayMonthly",
+	"properties": {
+		"description": "Triggers pipeline on the last Saturday of each month for monthly reporting",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "monthlyreportpipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2025-07-13T14:44:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						0
+					],
+					"hours": [
+						9
+					],
+					"monthlyOccurrences": [
+						{
+							"day": "Saturday",
+							"occurrence": -1
+						}
+					]
+				}
+			}
+		}
+	}
+}
