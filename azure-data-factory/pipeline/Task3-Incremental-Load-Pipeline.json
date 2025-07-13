@@ -20,7 +20,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "data/customers.csv",
+							"fileListPath": "data",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
