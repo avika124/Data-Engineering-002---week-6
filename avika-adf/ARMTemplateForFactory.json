@@ -37,7 +37,31 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Task3-Incremental-Load-Pipeline')]",
+			"name": "[concat(parameters('factoryName'), '/Task 4-monthlyreportpipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 10
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2025-07-13T14:49:27Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Task3 and 5-Incremental-Load-and-retrieve-failure')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -49,10 +73,10 @@
 						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 0,
+							"retry": 3,
 							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
+							"secureOutput": true,
+							"secureInput": true
 						},
 						"userProperties": [],
 						"typeProperties": {
@@ -88,8 +112,8 @@
 						],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
+							"retry": 3,
+							"retryIntervalInSeconds": 60,
 							"secureOutput": false,
 							"secureInput": false
 						},
@@ -155,7 +179,7 @@
 						],
 						"policy": {
 							"timeout": "0.12:00:00",
-							"retry": 0,
+							"retry": 2,
 							"retryIntervalInSeconds": 30,
 							"secureOutput": false,
 							"secureInput": false
@@ -180,30 +204,6 @@
 				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/monthlyreportpipeline')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Wait1",
-						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 10
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2025-07-13T14:49:27Z"
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
@@ -319,7 +319,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "Task3-Incremental-Load-Pipeline",
+							"referenceName": "Task3 and 5-Incremental-Load-and-retrieve-failure",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -344,7 +344,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Task3-Incremental-Load-Pipeline')]"
+				"[concat(variables('factoryId'), '/pipelines/Task3 and 5-Incremental-Load-and-retrieve-failure')]"
 			]
 		},
 		{
@@ -358,7 +358,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "monthlyreportpipeline",
+							"referenceName": "Task 4-monthlyreportpipeline",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -389,7 +389,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/monthlyreportpipeline')]"
+				"[concat(variables('factoryId'), '/pipelines/Task 4-monthlyreportpipeline')]"
 			]
 		},
 		{
