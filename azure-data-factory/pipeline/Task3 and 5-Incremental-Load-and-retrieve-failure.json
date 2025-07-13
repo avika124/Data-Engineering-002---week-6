@@ -1,5 +1,5 @@
 {
-	"name": "Task3-Incremental-Load-Pipeline",
+	"name": "Task3 and 5-Incremental-Load-and-retrieve-failure",
 	"properties": {
 		"description": "Incremental data pipeline using watermarking to process only new/modified records. Runs daily with change tracking.",
 		"activities": [
@@ -9,10 +9,10 @@
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
+					"retry": 3,
 					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
+					"secureOutput": true,
+					"secureInput": true
 				},
 				"userProperties": [],
 				"typeProperties": {
@@ -20,7 +20,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
+							"fileListPath": "customers.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -47,8 +47,8 @@
 				],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
+					"retry": 3,
+					"retryIntervalInSeconds": 60,
 					"secureOutput": false,
 					"secureInput": false
 				},
@@ -112,7 +112,7 @@
 				],
 				"policy": {
 					"timeout": "0.12:00:00",
-					"retry": 0,
+					"retry": 2,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false

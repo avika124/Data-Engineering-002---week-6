@@ -7,7 +7,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "monthlyreportpipeline",
+					"referenceName": "Task 4-monthlyreportpipeline",
 					"type": "PipelineReference"
 				}
 			}

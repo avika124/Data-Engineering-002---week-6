@@ -7,7 +7,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "Task3-Incremental-Load-Pipeline",
+					"referenceName": "Task3 and 5-Incremental-Load-and-retrieve-failure",
 					"type": "PipelineReference"
 				}
 			}
