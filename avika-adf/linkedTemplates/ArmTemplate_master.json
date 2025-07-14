@@ -19,6 +19,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
 		},
+		"FtpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FtpServer1'"
+		},
+		"SFTPServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SFTPServer1'"
+		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "avika-watermark-server.database.windows.net"
@@ -30,6 +38,26 @@
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "avika-watermark-server"
+		},
+		"FtpServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "ftp.dlptest.com"
+		},
+		"FtpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "avika-watermark-server"
+		},
+		"SFTPServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "test.rebex.net"
+		},
+		"SFTPServer1_properties_typeProperties_hostKeyFingerprint": {
+			"type": "string",
+			"defaultValue": "ssh-ed25519 32 e7:e4:45:c6:b8:e4:bb:d8:68:89:27:86:fd:01:58:f0"
+		},
+		"SFTPServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "demo"
 		},
 		"containerUri": {
 			"type": "string",
@@ -67,6 +95,12 @@
 					"AzureSqlDatabase1_password": {
 						"value": "[parameters('AzureSqlDatabase1_password')]"
 					},
+					"FtpServer1_password": {
+						"value": "[parameters('FtpServer1_password')]"
+					},
+					"SFTPServer1_password": {
+						"value": "[parameters('SFTPServer1_password')]"
+					},
 					"AzureSqlDatabase1_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
 					},
@@ -75,6 +109,21 @@
 					},
 					"AzureSqlDatabase1_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"FtpServer1_properties_typeProperties_host": {
+						"value": "[parameters('FtpServer1_properties_typeProperties_host')]"
+					},
+					"FtpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('FtpServer1_properties_typeProperties_userName')]"
+					},
+					"SFTPServer1_properties_typeProperties_host": {
+						"value": "[parameters('SFTPServer1_properties_typeProperties_host')]"
+					},
+					"SFTPServer1_properties_typeProperties_hostKeyFingerprint": {
+						"value": "[parameters('SFTPServer1_properties_typeProperties_hostKeyFingerprint')]"
+					},
+					"SFTPServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SFTPServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},

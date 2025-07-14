@@ -14,6 +14,12 @@
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
+		"FtpServer1_password": {
+			"value": ""
+		},
+		"SFTPServer1_password": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"value": "avika-watermark-server.database.windows.net"
 		},
@@ -22,6 +28,21 @@
 		},
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"value": "avika-watermark-server"
+		},
+		"FtpServer1_properties_typeProperties_host": {
+			"value": "ftp.dlptest.com"
+		},
+		"FtpServer1_properties_typeProperties_userName": {
+			"value": "avika-watermark-server"
+		},
+		"SFTPServer1_properties_typeProperties_host": {
+			"value": "test.rebex.net"
+		},
+		"SFTPServer1_properties_typeProperties_hostKeyFingerprint": {
+			"value": "ssh-ed25519 32 e7:e4:45:c6:b8:e4:bb:d8:68:89:27:86:fd:01:58:f0"
+		},
+		"SFTPServer1_properties_typeProperties_userName": {
+			"value": "demo"
 		}
 	}
 }
